@@ -106,3 +106,37 @@ function lengthOfLongestSubstring(s: string): number {
 console.log(lengthOfLongestSubstring("abcabcbb")); // outputs 3
 console.log(lengthOfLongestSubstring("pwwkew")); // outputs 3
 console.log(lengthOfLongestSubstring("bbbbb")); // outputs 1
+
+function test(s: string): number {
+    /* 
+        - nested loops
+        - one for travesting the string 
+        - other one for finding different substrings and after that
+        - we will check for all substring one by one and check for 
+        - each and every element if the element is not found when we will 
+        - store that element in HashSet otherwise we will break from t he loop
+        - and count it.
+    */
+
+    if (s.length === 0) {
+        return 0
+    }
+
+    let maxLength = -Infinity
+
+    for (let i = 0; i < s.length; i++) {
+        let map = new Map<string, number>()
+
+        for (let j = i; j < s.length; j++) {
+            if (map.has(s[j])) {
+                maxLength = Math.max(maxLength, j - i)
+                break
+            }
+            map.set(s[j], 1)
+        }
+    }
+
+    return maxLength
+}
+
+console.log(test("abcabc"));
