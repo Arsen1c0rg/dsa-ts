@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/src/Patterns/TwoPointers/Easy/removeDups.ts",
+            "program": "${workspaceFolder}/src/Data-Structures/BinaryTree.ts",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
