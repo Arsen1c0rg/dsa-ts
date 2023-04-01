@@ -1,14 +1,8 @@
 import { LinkedListNode } from "../../../Data-Structures/SinglyLinkedList";
+import { ListWithCycle } from "../../../helpers/LinkedList";
 
-// form a linkedlist
-const head = new LinkedListNode<number>(1)
-head.next = new LinkedListNode<number>(2)
-head.next.next = new LinkedListNode<number>(3)
-head.next.next.next = new LinkedListNode<number>(4)
-head.next.next.next.next = new LinkedListNode<number>(5)
-head.next.next.next.next.next = new LinkedListNode<number>(6)
-// create a linkedlist cycle
-head.next.next.next.next.next.next = head.next
+// a linkedlist that contains cycle
+const head = ListWithCycle(true)
 
 function hasCycleBrute(head: LinkedListNode<number>): boolean {
     // map of type LinkedListNode -> number
